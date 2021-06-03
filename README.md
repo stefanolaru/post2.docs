@@ -1,2 +1,3 @@
-# Initial page
+# Welcome to POST2
 
+Documentation coming soon.
