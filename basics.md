@@ -11,9 +11,6 @@ Once the form handler was created, we have an unique ID and ready to implement.
 All you have to do is replace the **action** attribute of your existing form with the unique POST2 handler URL
 Example: <span>_https://api.post2.io/replace-with-your-id_</span>
 
-> **NOTE** Set the **method** attribute to **POST**. If it's not set the default method on HTML forms is GET.
-> POST2 only accepts HTTP POST requests.
-
 ```html
 <!-- This is a sample email capture form -->
 <form method="POST" action="https://api.post2.io/replace-with-your-id">
@@ -22,7 +19,10 @@ Example: <span>_https://api.post2.io/replace-with-your-id_</span>
 </form>
 ```
 
-> **NOTE** Only form elements with a **name** attribute will have their values passed when submitting a form.
+> **NOTE** Set the **method** attribute to **POST**. If it's not set the default method on HTML forms is GET.
+> POST2 only accepts HTTP POST requests.
+
+> **NOTE2** Only form elements with a **name** attribute will have their values passed when submitting a form.
 
 ## Redirect ("Thank You" page)
 
