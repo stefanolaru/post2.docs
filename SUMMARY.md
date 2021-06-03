@@ -1,7 +1,7 @@
 # Table of contents
 
 -   [Introduction](README.md)
--   [Form Basics](basics.md)
+-   [Form Setup](basics.md)
 -   [AntiSPAM & Restrictions](antispam.md)
     -   AntiSPAM
     -   Origin Restrictions
