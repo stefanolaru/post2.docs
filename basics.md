@@ -54,48 +54,49 @@ To enhance the UI/UX of your forms you can submit data using AJAX without reload
 </form>
 ```
 
-```javascript
-// isolate the form
-const post2Form = document.getElemetById("post2-form");
-if (post2Form) {
-    // attach the event listener
-    post2Form.addEventListener("submit", (e) => {
-        // prevent the form submission
-        e.preventDefault();
-        // get the button & the email field
-        const button = post2Form.querySelector('type="submit"');
-        const emailField = post2Form.querySelector('type="email"');
-        // disable the button
-        button.setAttribute("disabled", true);
+Now the Javascript code.
 
-        // initiate the HTTP request, note we use the form handler as the endpoint
-        fetch(post2Form.getAttribute("action"), {
-            method: "POST",
-            body: JSON.stringify({
-                email: emailField.value,
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8",
-            },
+```javascript
+// get the form
+const post2Form = document.getElemetById("post2-form");
+
+// attach the event listener
+post2Form.addEventListener("submit", (e) => {
+    // prevent the form submission
+    e.preventDefault();
+    // get the button & the email field
+    const button = post2Form.querySelector('type="submit"');
+    const emailField = post2Form.querySelector('type="email"');
+    // disable the button
+    button.setAttribute("disabled", true);
+
+    // initiate the HTTP request, note we use the form handler as the endpoint
+    fetch(post2Form.getAttribute("action"), {
+        method: "POST",
+        body: JSON.stringify({
+            email: emailField.value,
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    })
+        .then((response) => response.json())
+        .then((res) => {
+            if (res.error) {
+                // there was an error
+                alert(res.error);
+            } else {
+                // successful submit
+                alert("Yay! it worked");
+            }
+            // enable back the button
+            button.removeAttribute("disabled");
         })
-            .then((response) => response.json())
-            .then((res) => {
-                if (res.error) {
-                    // there was an error
-                    alert(res.error);
-                } else {
-                    // successful submit
-                    alert("Yay! it worked");
-                }
-                // enable back the button
-                button.removeAttribute("disabled");
-            })
-            .catch((err) => {
-                // something went wrong with the request, see console
-                console.error(err);
-                // enable back the button
-                button.removeAttribute("disabled");
-            });
-    });
-}
+        .catch((err) => {
+            // something went wrong with the request, see console
+            console.error(err);
+            // enable back the button
+            button.removeAttribute("disabled");
+        });
+});
 ```
