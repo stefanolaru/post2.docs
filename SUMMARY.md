@@ -1,4 +1,5 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Welcome](README.md)
+* [Back to POST2](https://www.post2.io)
 
