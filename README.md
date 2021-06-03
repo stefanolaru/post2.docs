@@ -6,10 +6,12 @@ POST2 is a form backend service you can create with no code in less than 2 minut
 
 -   [Form Basics](basics.md)
 -   [AntiSPAM & Restrictions](antispam.md)
-    -   [AntiSPAM]('#spam')
-    -   [Origin Restrictions]('#origin')
-    -   [Country Restrictions]('#country')
+    -   AntiSPAM
+    -   Origin Restrictions
+    -   Country Restrictions
 -   [Data Validation](validation.md)
+    -   Form Schema
+    -   Validation Rules
 -   [Email Notifications](email.md)
 -   [Webhooks](webhooks.md)
 -   [Integrations](integrations.md)
