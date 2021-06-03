@@ -64,11 +64,8 @@ const post2Form = document.getElemetById("post2-form");
 post2Form.addEventListener("submit", (e) => {
     // prevent the form submission
     e.preventDefault();
-    // get the button & the email field
-    const button = post2Form.querySelector('type="submit"');
+    // get the email field
     const emailField = post2Form.querySelector('type="email"');
-    // disable the button
-    button.setAttribute("disabled", true);
 
     // initiate the HTTP request, note we use the form handler as the endpoint
     fetch(post2Form.getAttribute("action"), {
@@ -89,14 +86,10 @@ post2Form.addEventListener("submit", (e) => {
                 // successful submit
                 alert("Yay! it worked");
             }
-            // enable back the button
-            button.removeAttribute("disabled");
         })
         .catch((err) => {
             // something went wrong with the request, see console
             console.error(err);
-            // enable back the button
-            button.removeAttribute("disabled");
         });
 });
 ```
