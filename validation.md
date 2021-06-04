@@ -28,6 +28,8 @@ If no schema is defined there's no specification how to label the fields, POST2 
 > Name Field: John Doe
 > Email Field: john@example.com
 
+Enabling **strict schema** will exclude any additional fields not defined in the form schema.
+
 ## Form Validation
 
 **Backend validation is a MUST**. Frontend validation (browser native or javascript) can easily be bypassed, you can use it to improve the UX by providing instant feedback to your visitors.
@@ -43,8 +45,6 @@ When defining the form schema multiple validation rules can be attached to each 
     }
 }
 ```
-
-Enabling **strict schema** will exclude any additional fields not defined in the form schema.
 
 ## Validation Rules
 
