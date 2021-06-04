@@ -93,3 +93,15 @@ post2Form.addEventListener("submit", (e) => {
         });
 });
 ```
+
+## Health Dashboard
+
+We provide a simple dashboard to monitor your forms activity for the past 30 days.
+
+The SPAM submissions are not counted into the total.
+
+**POST2 doesn't store any submitted data, we log just the timestamp and if it's spam or not**
+
+The stats don't include the submissions blocked by the honeypot fields or other restrictions.
+
+![Dashboard](img/dashboard.png)

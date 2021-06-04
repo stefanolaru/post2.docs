@@ -2,7 +2,47 @@
 
 POST2 provides a no code way to define your form schema, fields, validation rules and errors for your form inputs.
 
-![Validation rules](img/validation.png "validation rules")
+![Validation rules](img/validation.png)
+
+## Form Schema
+
+Defining a form schema is optional, but to use some of the features integrations or autoresponders you have to define it.
+
+The form schema helps POST2 understand your data structure, add data validation or enhance email notification customization.
+
+Let's take this sample form:
+
+```html
+<!-- This is a sample email capture form -->
+<form method="POST" action="https://api.post2.io/replace-with-your-id">
+    <!-- name field -->
+    <input type="text" name="name_field" required />
+    <!-- email field -->
+    <input type="email" name="email_field" required />
+    <!-- the rest of the form -->
+</form>
+```
+
+If no schema is defined there's no specification how to label the fields, POST2 will simply _humanize_ the name attribute and the notification will look like:
+
+> Name Field: John Doe
+> Email Field: john@example.com
+
+## Form Validation
+
+**Backend validation is a MUST**. Frontend validation (browser native or javascript) can easily be bypassed, you can use it to improve the UX by providing instant feedback to your visitors.
+
+When defining the form schema multiple validation rules can be attached to each field. Customizing error text is also possible.
+
+```json
+// sample response on validation errors
+{
+    "error": "Data validation failed.",
+    "errors": {
+        "email": "Please enter a non disposable email address."
+    }
+}
+```
 
 Enabling **strict schema** will exclude any additional fields not defined in the form schema.
 
