@@ -6,9 +6,9 @@ POST2 sends you the form submitted data via email. It can send to one or multipl
 
 ## Notification Template
 
-The email notification template is fully customizable using [{{handlebars}}](handlebarsjs.com). It contains no POST2 branding.
+The email notification template is fully customizable using [@{{handlebars}}](handlebarsjs.com). It contains no POST2 branding.
 
-The {{unsubscribe_link}} needs to be present, but you can customize it as you want.
+The @{{unsubscribe_link}} needs to be present, but you can customize it as you want.
 
 ```html
 <p>Hi John</p>
